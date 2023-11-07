@@ -1,7 +1,7 @@
 // solarSystem.js
-import { mercury } from './planets/mercury.js';
-import { venus } from './planets/venus.js';
-import { earth } from './planets/earth.js';
+import { mercury } from './Planets/mercury.js';
+import { venus } from './Planets/venus.js';
+import { earth } from './Planets/earth.js';
 
 const canvas = document.getElementById('solarSystem');
 const context = canvas.getContext('2d');
