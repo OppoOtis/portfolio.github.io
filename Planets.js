@@ -31,7 +31,7 @@ class PlanetsManager {
 }
 
 function CreatePlanets() {
-    var planetsAmount = 8;
+    var planetsAmount = 16;
     for (var i = 0; i < planetsAmount; i++) {
         planetsData.push(new Planet(15, 'red', ((canvas.height - canvas.height / 2) / planetsAmount) * (i + 1), canvas.width / 2, canvas.height / 2, 0, 10));
     }
