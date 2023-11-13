@@ -36,7 +36,7 @@ function CreatePlanets() {
     var planetsAmount = 6;
     for (var i = 0; i < planetsAmount; i++) {
         planetsData.push(new Planet(i, 15, 'red', ((canvas.height - canvas.height / 2) / planetsAmount) * (i + 1), canvas.width / 2, canvas.height / 2, 0, 1));
-        planetPopups.push(new PlanetPopup(planetsData[i]));
+        planetPopups.push(new PlanetPopup(planetsData[i], planetsData[i].positionX, planetsData[i].positionY, 100, 20, 'white', false));
     }
 }
 

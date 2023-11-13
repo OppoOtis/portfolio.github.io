@@ -14,12 +14,12 @@ class Input {
 
         canvas.addEventListener('mouseout', () => {
             mouse.out = true;
-            console.log('Mouse exited the canvas');
+            //console.log('Mouse exited the canvas');
         });
 
         canvas.addEventListener('mouseover', () => {
             mouse.out = false;
-            console.log('Mouse entered the canvas');
+            //console.log('Mouse entered the canvas');
         });
     }
 }
