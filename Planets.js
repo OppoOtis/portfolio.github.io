@@ -1,7 +1,8 @@
 const planetsData = [];
 
 class Planet{
-    constructor(radius, color, offset, positionX, positionY, angle, rotationSpeed) {
+    constructor(index, radius, color, offset, positionX, positionY, angle, rotationSpeed) {
+        this.index = index;
         this.radius = radius;
         this.color = color;
         this.offset = offset;
@@ -23,6 +24,7 @@ class PlanetsManager {
 
     Update() {
         RotatePlanets();
+        CheckHoveredPlanet();
     }
 
     Draw() {
@@ -33,7 +35,7 @@ class PlanetsManager {
 function CreatePlanets() {
     var planetsAmount = 6;
     for (var i = 0; i < planetsAmount; i++) {
-        planetsData.push(new Planet(15, 'red', ((canvas.height - canvas.height / 2) / planetsAmount) * (i + 1), canvas.width / 2, canvas.height / 2, 0, 10));
+        planetsData.push(new Planet(i, 15, 'red', ((canvas.height - canvas.height / 2) / planetsAmount) * (i + 1), canvas.width / 2, canvas.height / 2, 0, 1));
     }
 }
 
@@ -54,7 +56,48 @@ function RotatePlanets() {
         planet.positionX = newX;
         planet.positionY = newY;
     }
-    console.log("rotated");
+}
+
+let hoveredPlanet = null;
+
+function CheckHoveredPlanet() {
+    const currentlyHoveredPlanet = planetsData.find((planet) => IsMouseOverPlanet(planet));
+
+    if (hoveredPlanet && !currentlyHoveredPlanet) {
+        // Mouse exited the previously hovered planet
+        MouseExitPlanet(hoveredPlanet);
+        hoveredPlanet = null;
+    } else if (currentlyHoveredPlanet && !hoveredPlanet) {
+        // Mouse entered a new planet
+        MouseEnterPlanet(currentlyHoveredPlanet);
+        hoveredPlanet = currentlyHoveredPlanet;
+    } else if (currentlyHoveredPlanet && hoveredPlanet && currentlyHoveredPlanet === hoveredPlanet) {
+        // Mouse is still on the same planet
+        MouseOnPlanet(currentlyHoveredPlanet);
+    }
+}
+
+function IsMouseOverPlanet(planet) {
+    const distance = Math.sqrt(
+        Math.pow(mouse.x - planet.positionX, 2) +
+        Math.pow(mouse.y - planet.positionY, 2)
+    );
+    return distance <= planet.radius;
+}
+
+function MouseEnterPlanet(planet) {
+    console.log('Mouse enter planet:', planet.index);
+    planet.radius = planet.radius + 5;
+
+}
+
+function MouseOnPlanet(planet) {
+    console.log('Mouse on planet:', planet.index);
+}
+
+function MouseExitPlanet(planet) {
+    console.log('Mouse exited planet:', planet.index);
+    planet.radius = planet.radius - 5;
 }
 
 function DrawPlanets() {

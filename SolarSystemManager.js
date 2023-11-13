@@ -4,6 +4,7 @@ const context = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+const input = new Input(canvas);
 const sun = new Sun(30, 'orange', canvas.width / 2, canvas.height / 2);
 const planetsManager = new PlanetsManager();
 
