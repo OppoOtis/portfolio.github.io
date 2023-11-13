@@ -36,6 +36,7 @@ function CreatePlanets() {
     var planetsAmount = 6;
     for (var i = 0; i < planetsAmount; i++) {
         planetsData.push(new Planet(i, 15, 'red', ((canvas.height - canvas.height / 2) / planetsAmount) * (i + 1), canvas.width / 2, canvas.height / 2, 0, 1));
+        planetPopups.push(new PlanetPopup(planetsData[i]));
     }
 }
 
@@ -64,15 +65,12 @@ function CheckHoveredPlanet() {
     const currentlyHoveredPlanet = planetsData.find((planet) => IsMouseOverPlanet(planet));
 
     if (hoveredPlanet && !currentlyHoveredPlanet) {
-        // Mouse exited the previously hovered planet
         MouseExitPlanet(hoveredPlanet);
         hoveredPlanet = null;
     } else if (currentlyHoveredPlanet && !hoveredPlanet) {
-        // Mouse entered a new planet
         MouseEnterPlanet(currentlyHoveredPlanet);
         hoveredPlanet = currentlyHoveredPlanet;
     } else if (currentlyHoveredPlanet && hoveredPlanet && currentlyHoveredPlanet === hoveredPlanet) {
-        // Mouse is still on the same planet
         MouseOnPlanet(currentlyHoveredPlanet);
     }
 }
@@ -88,7 +86,7 @@ function IsMouseOverPlanet(planet) {
 function MouseEnterPlanet(planet) {
     console.log('Mouse enter planet:', planet.index);
     planet.radius = planet.radius + 5;
-
+    planetPopups[planet.index].Popup();
 }
 
 function MouseOnPlanet(planet) {
@@ -98,6 +96,7 @@ function MouseOnPlanet(planet) {
 function MouseExitPlanet(planet) {
     console.log('Mouse exited planet:', planet.index);
     planet.radius = planet.radius - 5;
+    planetPopups[planet.index].Popdown();
 }
 
 function DrawPlanets() {
