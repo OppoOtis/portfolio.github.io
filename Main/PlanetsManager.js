@@ -1,18 +1,3 @@
-const planetsData = [];
-
-class Planet{
-    constructor(index, radius, color, offset, positionX, positionY, angle, rotationSpeed) {
-        this.index = index;
-        this.radius = radius;
-        this.color = color;
-        this.offset = offset;
-        this.positionX = positionX;
-        this.positionY = positionY;
-        this.angle = angle;
-        this.rotationSpeed = rotationSpeed;
-    }
-}
-
 class PlanetsManager {
     constructor() {
         this.Start();
@@ -20,25 +5,31 @@ class PlanetsManager {
 
     Start() {
         CreatePlanets();
+        planetsPopup.Start();
     }
 
     Update() {
         RotatePlanets();
+        ChangePlanetsTime();
         CheckHoveredPlanet();
     }
 
     Draw() {
         DrawPlanets();
+        planetsPopup.Draw();
     }
 }
 
 function CreatePlanets() {
-    var planetsAmount = 6;
+    var planetsAmount = projects.length;
     for (var i = 0; i < planetsAmount; i++) {
-        planetsData.push(new Planet(i, 15, 'red', ((canvas.height - canvas.height / 2) / planetsAmount) * (i + 1), canvas.width / 2, canvas.height / 2, 0, 1));
-        planetPopups.push(new PlanetPopup(planetsData[i], planetsData[i].positionX, planetsData[i].positionY, 100, 20, 'white', false));
+        planetsData.push(new Planet(
+            i, 15, 'red', ((canvas.height - canvas.height / 2) / planetsAmount) * (i + 1), canvas.width / 2, canvas.height / 2, 0, 1, 0, "test text"));
     }
 }
+
+const planetsPopup = new PlanetPopup(0, 0, 0, 0,0,0, "", new Image(), 0,0, "", false);
+
 
 function RotatePlanets() {
     const sun = { positionX: canvas.width / 2, positionY: canvas.height / 2 };
@@ -48,7 +39,7 @@ function RotatePlanets() {
         const planet = planetsData[i];
 
         // Update the angle continuously for each planet
-        planet.angle += (planet.rotationSpeed / 1000)/ (i + 1);
+        planet.angle += ((planet.rotationSpeed / 1000)/ (i + 1))*planetOveralSpeed;
 
         // Calculate the new position based on rotation around the sun
         const newX = sun.positionX + planet.offset * Math.cos(planet.angle);
@@ -56,6 +47,16 @@ function RotatePlanets() {
 
         planet.positionX = newX;
         planet.positionY = newY;
+    }
+}
+
+function ChangePlanetsTime(){
+    if(planetsPopup.open){
+        if(planetOveralSpeed > 0.05) planetOveralSpeed = planetOveralSpeed - 0.007;
+    }
+    else{
+        planetOveralSpeed = planetOveralSpeed + 0.004;
+        if(planetOveralSpeed >= 1) planetOveralSpeed = 1;
     }
 }
 
@@ -86,17 +87,20 @@ function IsMouseOverPlanet(planet) {
 function MouseEnterPlanet(planet) {
     console.log('Mouse enter planet:', planet.index);
     planet.radius = planet.radius + 5;
-    planetPopups[planet.index].Popup();
+    planetsPopup.SetData(planet);
+    planetsPopup.Update(planet);
+    planetsPopup.open = true;
 }
 
 function MouseOnPlanet(planet) {
-    console.log('Mouse on planet:', planet.index);
+    //console.log('Mouse on planet:', planet.index);
+    planetsPopup.Update(planet);
 }
 
 function MouseExitPlanet(planet) {
     console.log('Mouse exited planet:', planet.index);
     planet.radius = planet.radius - 5;
-    planetPopups[planet.index].Popdown();
+    planetsPopup.open = false;
 }
 
 function DrawPlanets() {
