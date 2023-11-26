@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+
+  :root {
+    --random-color: #000; /* Default color */
+  }
+
+  body {
+    margin: 0; /* Remove default body margin */
+    font-family: Arial, sans-serif; /* Set a default font */
+    background-color: #05050b; /* Set a background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure minimum height of the viewport */
+    overflow: hidden;
+  }
+
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Behind other content */
+  }
+
+  .pagecontainer {
+    position: relative;
+    width: calc(100% - 40px); /* Adjust width with margins subtracted */
+    height: calc(100vh - 40px); /* Adjust height with margins subtracted */
+    padding: 20px; /* Add padding inside the box */
+    /*background-color: rgb(3, 3, 32); /* Set a background color */
+    overflow: auto; /* Add scrollbar when content overflows */
+    border: 2px solid var(--random-color); /* Add a border */
+    box-shadow: 0 0 10px 2px var(--random-color);
+    border-radius: 10px; /* Add curved corners */
+    z-index: 1;
+  }
+
+  .circle {
+    position: fixed;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 2px solid var(--random-color);
+    box-shadow: 0 0 10px 2px var(--random-color);
+    z-index: 2;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #05050b; /* Add a background color */
+  }
+
+  .circle .planet {
+    position: absolute;
+    width: 100%; /* Fill the circle width */
+    height: auto; /* Maintain aspect ratio */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    image-rendering: pixelated; /* Set the image-rendering property */
+  }
+  /* Style the headings and paragraphs inside the container */
+  .pagecontainer h1 {
+    font-size: 2em; /* Adjust heading font size */
+    color: #fff;
+  }
+
+  .pagecontainer h2 {
+    font-size: 1.5em; /* Adjust heading font size */
+    margin-top: 20px; /* Add spacing between headings */
+    color: #fff;
+  }
+
+  .pagecontainer p {
+    line-height: 1.6; /* Adjust paragraph line height */
+    color: #fff;
+  }
+
+  /* Hide scrollbar in Firefox */
+  .pagecontainer::-webkit-scrollbar {
+    display: none;
+  }
+
+  .section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 200px; /* Adjust spacing between sections */
+  }
+  
+  .content {
+    display: flex;
+    width: 100%;
+  }
+  
+  .text,
+  .image {
+    width: 50%; /* Each taking half of the section */
+    padding: 10px;
+  }
+  
+  .text h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .text p {
+    line-height: 1.6;
+    text-align: center;
+  }
+  
+  .image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 800px) {
+    .section {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center;
+    }
+  
+    .content {
+      flex-direction: column; /* Stack text and image vertically */
+      align-items: center;
+    }
+  
+    .text,
+    .image {
+      width: 100%; /* Full width for text and image on small screens */
+    }
+  
+    .text,
+    .image {
+      padding: 10px; /* Adjust padding for smaller screens */
+    }
+  }
