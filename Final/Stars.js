@@ -8,7 +8,27 @@ const stars = [];
 
 let mouseX = 0;
 let mouseY = 0;
+const starAmount = canvas.width;
 const influenceRadius = 80;
+const scrollHeaviness = 10;
+
+const pageContainer = document.querySelector('.pagecontainer');
+let previousScrollY = pageContainer.scrollTop;
+
+pageContainer.addEventListener('scroll', function () {
+    const currentScrollY = pageContainer.scrollTop;
+    const scrollAmount = currentScrollY - previousScrollY;
+  
+    stars.forEach((star) => {
+        const heaviness = star.size / (scrollHeaviness * (0.5 + Math.random()));
+        star.y -= scrollAmount * heaviness;
+
+        if(star.y > canvas.height-3) star.y = 3;
+        if(star.y < 3) star.y = canvas.height-3;
+    });
+    console.log("scrolling");
+    previousScrollY = currentScrollY;
+});
 
 window.addEventListener('mousemove', (event) => {
     const bounds = canvas.getBoundingClientRect();
@@ -30,7 +50,7 @@ function GenerateRandomStars(numStars) {
   }
 }
 
-GenerateRandomStars(2000);
+GenerateRandomStars(starAmount);
 
 function Update() {
     UpdateStars();
@@ -51,7 +71,7 @@ function UpdateStars(){
         }
 
         const repelFactor = 0.5; // Adjust the repelling strength
-        const borderMargin = 1; // Adjust the distance from the borders to trigger repelling
+        const borderMargin = 5; // Adjust the distance from the borders to trigger repelling
 
         if (star.x < borderMargin) {
             star.x += repelFactor;

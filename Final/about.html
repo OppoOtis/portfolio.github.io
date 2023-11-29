@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joppe Dekkers</title>
+    <link rel="stylesheet" href="aboutStyle.css" />
+  </head>
+  <body>
+    <canvas id="starsCanvas"></canvas>
+    <div class="pagecontainer">
+      <section class="section">
+        <div class="smallContent">
+          <div class="text">
+            <h1>Experimentalist<br />Game Designer</h1>
+          </div>
+          <div class="image">
+            <img src="PF.jpeg" alt="Image 1" />
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="content">
+          <h2>About me</h2>
+        </div>
+      </section>
+      <section class="section">
+        <div class="text">
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas est
+            fugit sit, necessitatibus aliquid quis. Sequi, beatae ratione vel
+            reprehenderit explicabo laborum tenetur modi error facilis.
+            Excepturi molestiae velit voluptatum? Lorem, ipsum dolor sit amet
+            consectetur adipisicing elit. Exercitationem officia aliquam
+            deleniti ex praesentium error minima nihil quam consequatur
+            asperiores culpa voluptas reprehenderit aut voluptates nemo maxime
+            ipsum magni, dolor, harum distinctio, accusamus blanditiis provident
+            dignissimos similique! Porro nesciunt libero nostrum commodi
+            repellat, error tenetur aliquid at saepe soluta aspernatur
+            cupiditate ratione dolore perferendis quidem magni et nemo quam!
+            Impedit odio unde quisquam repellat, dicta quod labore nesciunt
+            maxime suscipit qui quos esse veniam molestias maiores expedita
+            obcaecati praesentium nobis ratione a quae, quas quam harum eveniet
+            adipisci? Autem, commodi! Aut error illum porro illo amet?
+            Doloribus, necessitatibus suscipit! Ullam alias asperiores ex est
+            sed in eveniet illum reiciendis illo, inventore debitis pariatur
+            voluptate quisquam vel. Porro harum dicta a qui, veniam eius nulla
+            suscipit libero quibusdam cumque pariatur. Accusamus ipsum vero
+            facere, earum iste voluptas eligendi itaque doloribus neque labore,
+            excepturi tempore quibusdam dolorum veniam reprehenderit quae cum
+            molestias modi ratione odit et similique? Harum, temporibus nostrum?
+            Tenetur, nisi impedit accusantium modi iusto nulla fugit cupiditate
+            fugiat minima quo beatae amet doloremque ducimus commodi vel
+            laudantium perferendis eius harum. Doloribus excepturi ratione quo,
+            tenetur minima eveniet molestias quidem aspernatur facilis,
+            temporibus, cupiditate corporis fuga iusto ipsa possimus mollitia
+            modi quis ipsum nemo. Repellendus ullam ipsum labore distinctio, quo
+            et, maiores quod saepe assumenda molestiae molestias mollitia in
+            aperiam odio? Eos quo ea tempora eveniet aut consequatur distinctio
+            vero, explicabo at. Amet fugiat aperiam animi iusto est doloremque,
+            unde, id, at cumque nemo dolore. Itaque temporibus debitis
+            architecto impedit. Harum odit nam similique qui maxime animi
+            recusandae pariatur at labore temporibus aliquam veniam modi quaerat
+            non dolore tempore, minus vitae provident deleniti. Error, quibusdam
+            sunt non enim soluta consequatur recusandae! At libero rerum
+            numquam, quia tenetur et maxime laudantium nobis obcaecati vitae.
+            Alias facilis modi distinctio, voluptates expedita obcaecati
+            repudiandae assumenda ut error? Beatae veritatis explicabo odio,
+            eligendi eaque ea sit maiores dolor sint tempora suscipit quibusdam
+            aliquam iusto molestiae consequuntur? In itaque, molestiae nisi
+            labore voluptate dolore laboriosam vel adipisci nam obcaecati.
+            Expedita laudantium quam tempora repudiandae quia, ducimus sunt
+            dicta aspernatur dolor sint inventore atque excepturi quidem
+            exercitationem modi earum neque reprehenderit enim error deserunt
+            consequuntur a perspiciatis ab? Ipsum labore distinctio iusto saepe
+            porro. Perferendis, quidem dolor. Obcaecati vitae optio sunt commodi
+            voluptate nostrum, suscipit natus excepturi, nam, alias voluptatem
+            delectus voluptas! Maiores rem, neque odit similique, omnis id
+            eligendi architecto placeat, quo quis fuga? In veritatis quos, enim
+            labore iste, quas reprehenderit repudiandae magni quam expedita esse
+            similique omnis obcaecati? Et, ea? Magnam eaque veritatis ipsa fuga
+            accusamus laborum consectetur voluptates, distinctio saepe rem vel.
+            Provident iste fuga consectetur libero, distinctio optio deserunt at
+            dolorem. Doloremque eos possimus provident consequatur nostrum!
+            Officia nostrum rerum ea consectetur ullam odit ipsa voluptatem
+            sapiente, dignissimos, aut saepe facilis corporis. Eos, totam
+            perferendis voluptates nam quae consectetur iusto non magnam, iure
+            atque quas. Itaque, voluptas accusantium. Ab libero, hic fugit
+            nesciunt dolorum corrupti animi impedit unde veritatis nostrum, aut
+            asperiores distinctio nisi repudiandae earum provident. Consequatur
+            architecto labore recusandae provident.
+          </p>
+        </div>
+      </section>
+    </div>
+    <div class="logo">
+      <h1>Joppe Dekkers</h1>
+    </div>
+    <script>
+      const images = document.querySelectorAll(".image img");
+
+      images.forEach((img) => {
+        img.style.position = "relative";
+        img.style.top = "0";
+        img.style.left = "0";
+        img.style.transition = "transform 3s ease-in-out";
+        floatImage(img);
+      });
+
+      function floatImage(img) {
+        const randomX = Math.random() * 25 - 12.5; // Random horizontal movement
+        const randomY = Math.random() * 25 - 12.5; // Random vertical movement
+        img.style.transform = `translate(${randomX}px, ${randomY}px)`;
+        setTimeout(() => floatImage(img), 3000); // Repeat the floating effect every 2 seconds
+      }
+    </script>
+    <script src="Stars.js"></script>
+  </body>
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project-1</title>
+    <link rel="stylesheet" href="../projectStyle.css" />
+    <script>
+      window.addEventListener("load", () => {
+        const randomColor = `rgb(${Math.floor(
+          Math.random() * 256
+        )}, ${Math.floor(Math.random() * 256)}, ${Math.floor(
+          Math.random() * 256
+        )})`;
+
+        // Set the random color as a CSS variable
+        document.documentElement.style.setProperty(
+          "--random-color",
+          randomColor
+        );
+      });
+    </script>
+  </head>
+  <body>
+    <canvas id="starsCanvas"></canvas>
+    <div class="pagecontainer">
+      <section class="section">
+        <div class="content">
+          <h1>Project1</h1>
+        </div>
+      </section>
+      <section class="section">
+        <div class="content">
+          <div class="text">
+            <h2>Section Title 1</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Blanditiis quas odio illum alias eius commodi nisi maxime aliquam,
+              excepturi pariatur quod non nemo adipisci officia voluptates hic
+              nostrum in libero maiores eaque odit facilis ipsa. Corporis
+              tempore, ea, modi iure veritatis voluptatum rerum cumque
+              repellendus reiciendis odio ipsum. Nulla magnam ratione, pariatur
+              sit voluptatum maiores cumque accusantium sed cum facilis
+              blanditiis, quam voluptatem commodi officiis voluptas laudantium
+              quis. Aspernatur ab fugiat, repudiandae tenetur dolore labore
+              culpa blanditiis sapiente sed explicabo aliquid recusandae iste
+              sunt aut quaerat nemo praesentium molestiae consequuntur illum
+              esse dicta officia numquam saepe distinctio! Culpa, nisi dicta.
+              Obcaecati dolores, velit quasi nisi, culpa in odit deleniti nam
+              ullam hic quas quos corporis aliquam beatae eaque ducimus quam
+              laudantium nemo! Nisi totam veniam placeat modi recusandae
+              repellat, impedit quasi eum. Beatae, voluptas consequuntur placeat
+              impedit repellendus architecto nam facilis eum at numquam,
+              assumenda similique. Quia rem sit sapiente aliquam tenetur
+              inventore dolorem molestias, reiciendis nemo quod quidem. Laborum
+              impedit, nobis quisquam iusto, minus doloremque reprehenderit
+              perspiciatis recusandae, facilis ad eos voluptatibus. Dignissimos
+              iure quibusdam vel mollitia asperiores saepe odit quo, magnam ad
+              molestias corrupti nemo voluptatum eligendi laboriosam non.
+              Doloremque iure natus dolores molestias neque quis! Deleniti,
+              sapiente.
+            </p>
+          </div>
+          <div class="image">
+            <img src="Images/lake.jpg" alt="Image 1" />
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="content">
+          <div class="image">
+            <img src="Images/abstract.jpg" alt="Image 2" />
+          </div>
+          <div class="text">
+            <h2>Section Title 2</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatibus esse totam blanditiis iure quos. Suscipit ea beatae,
+              doloremque voluptates corporis reprehenderit eaque placeat
+              repudiandae harum perferendis magni, quam rem, libero mollitia id
+              quas fuga totam obcaecati quae temporibus dolorum. Doloribus iusto
+              perferendis officiis voluptate, officia illo totam voluptatum
+              optio error placeat, corrupti fuga quisquam. Inventore iste
+              temporibus veniam quia deleniti placeat dolorum doloremque facilis
+              similique amet! Dolore minus cum beatae iure excepturi impedit,
+              necessitatibus ducimus quia adipisci aliquam omnis velit fuga
+              repellat? Quas eaque repellendus aliquid iusto nisi, cumque
+              pariatur hic inventore exercitationem quia, at numquam reiciendis
+              maiores laborum voluptates quasi odio nobis earum nemo quae.
+              Tempore, in modi fugit ipsam enim atque culpa nostrum nisi ipsa
+              beatae ab magni, delectus at ullam? Quis odit expedita rem saepe
+              culpa incidunt fuga iusto dolores iste, aperiam impedit, ad modi
+              laudantium reiciendis perspiciatis voluptates in. Nihil obcaecati
+              nulla magni maiores eos nemo beatae voluptatibus corporis iure
+              fugit ipsam tempora itaque dolor debitis tempore tenetur ab
+              aliquid, iste nisi. Aspernatur pariatur labore delectus, optio
+              harum, modi porro, dolorem debitis adipisci veniam nostrum. Amet,
+              sunt illo in hic aspernatur, quia excepturi tempore minus quisquam
+              velit quas blanditiis, eius possimus consequuntur culpa
+              reprehenderit placeat ea!
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="content">
+          <div class="text">
+            <h2>Section Title 1</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Blanditiis quas odio illum alias eius commodi nisi maxime aliquam,
+              excepturi pariatur quod non nemo adipisci officia voluptates hic
+              nostrum in libero maiores eaque odit facilis ipsa. Corporis
+              tempore, ea, modi iure veritatis voluptatum rerum cumque
+              repellendus reiciendis odio ipsum. Nulla magnam ratione, pariatur
+              sit voluptatum maiores cumque accusantium sed cum facilis
+              blanditiis, quam voluptatem commodi officiis voluptas laudantium
+              quis. Aspernatur ab fugiat, repudiandae tenetur dolore labore
+              culpa blanditiis sapiente sed explicabo aliquid recusandae iste
+              sunt aut quaerat nemo praesentium molestiae consequuntur illum
+              esse dicta officia numquam saepe distinctio! Culpa, nisi dicta.
+              Obcaecati dolores, velit quasi nisi, culpa in odit deleniti nam
+              ullam hic quas quos corporis aliquam beatae eaque ducimus quam
+              laudantium nemo! Nisi totam veniam placeat modi recusandae
+              repellat, impedit quasi eum. Beatae, voluptas consequuntur placeat
+              impedit repellendus architecto nam facilis eum at numquam,
+              assumenda similique. Quia rem sit sapiente aliquam tenetur
+              inventore dolorem molestias, reiciendis nemo quod quidem. Laborum
+              impedit, nobis quisquam iusto, minus doloremque reprehenderit
+              perspiciatis recusandae, facilis ad eos voluptatibus. Dignissimos
+              iure quibusdam vel mollitia asperiores saepe odit quo, magnam ad
+              molestias corrupti nemo voluptatum eligendi laboriosam non.
+              Doloremque iure natus dolores molestias neque quis! Deleniti,
+              sapiente.
+            </p>
+          </div>
+          <div class="image">
+            <img src="Images/lake.jpg" alt="Image 1" />
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="content">
+          <div class="image">
+            <img src="Images/abstract.jpg" alt="Image 2" />
+          </div>
+          <div class="text">
+            <h2>Section Title 2</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatibus esse totam blanditiis iure quos. Suscipit ea beatae,
+              doloremque voluptates corporis reprehenderit eaque placeat
+              repudiandae harum perferendis magni, quam rem, libero mollitia id
+              quas fuga totam obcaecati quae temporibus dolorum. Doloribus iusto
+              perferendis officiis voluptate, officia illo totam voluptatum
+              optio error placeat, corrupti fuga quisquam. Inventore iste
+              temporibus veniam quia deleniti placeat dolorum doloremque facilis
+              similique amet! Dolore minus cum beatae iure excepturi impedit,
+              necessitatibus ducimus quia adipisci aliquam omnis velit fuga
+              repellat? Quas eaque repellendus aliquid iusto nisi, cumque
+              pariatur hic inventore exercitationem quia, at numquam reiciendis
+              maiores laborum voluptates quasi odio nobis earum nemo quae.
+              Tempore, in modi fugit ipsam enim atque culpa nostrum nisi ipsa
+              beatae ab magni, delectus at ullam? Quis odit expedita rem saepe
+              culpa incidunt fuga iusto dolores iste, aperiam impedit, ad modi
+              laudantium reiciendis perspiciatis voluptates in. Nihil obcaecati
+              nulla magni maiores eos nemo beatae voluptatibus corporis iure
+              fugit ipsam tempora itaque dolor debitis tempore tenetur ab
+              aliquid, iste nisi. Aspernatur pariatur labore delectus, optio
+              harum, modi porro, dolorem debitis adipisci veniam nostrum. Amet,
+              sunt illo in hic aspernatur, quia excepturi tempore minus quisquam
+              velit quas blanditiis, eius possimus consequuntur culpa
+              reprehenderit placeat ea!
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="content">
+          <div class="text">
+            <h2>Section Title 1</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Blanditiis quas odio illum alias eius commodi nisi maxime aliquam,
+              excepturi pariatur quod non nemo adipisci officia voluptates hic
+              nostrum in libero maiores eaque odit facilis ipsa. Corporis
+              tempore, ea, modi iure veritatis voluptatum rerum cumque
+              repellendus reiciendis odio ipsum. Nulla magnam ratione, pariatur
+              sit voluptatum maiores cumque accusantium sed cum facilis
+              blanditiis, quam voluptatem commodi officiis voluptas laudantium
+              quis. Aspernatur ab fugiat, repudiandae tenetur dolore labore
+              culpa blanditiis sapiente sed explicabo aliquid recusandae iste
+              sunt aut quaerat nemo praesentium molestiae consequuntur illum
+              esse dicta officia numquam saepe distinctio! Culpa, nisi dicta.
+              Obcaecati dolores, velit quasi nisi, culpa in odit deleniti nam
+              ullam hic quas quos corporis aliquam beatae eaque ducimus quam
+              laudantium nemo! Nisi totam veniam placeat modi recusandae
+              repellat, impedit quasi eum. Beatae, voluptas consequuntur placeat
+              impedit repellendus architecto nam facilis eum at numquam,
+              assumenda similique. Quia rem sit sapiente aliquam tenetur
+              inventore dolorem molestias, reiciendis nemo quod quidem. Laborum
+              impedit, nobis quisquam iusto, minus doloremque reprehenderit
+              perspiciatis recusandae, facilis ad eos voluptatibus. Dignissimos
+              iure quibusdam vel mollitia asperiores saepe odit quo, magnam ad
+              molestias corrupti nemo voluptatum eligendi laboriosam non.
+              Doloremque iure natus dolores molestias neque quis! Deleniti,
+              sapiente.
+            </p>
+          </div>
+          <div class="image">
+            <img src="Images/lake.jpg" alt="Image 1" />
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="content">
+          <div class="image">
+            <img src="Images/abstract.jpg" alt="Image 2" />
+          </div>
+          <div class="text">
+            <h2>Section Title 2</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatibus esse totam blanditiis iure quos. Suscipit ea beatae,
+              doloremque voluptates corporis reprehenderit eaque placeat
+              repudiandae harum perferendis magni, quam rem, libero mollitia id
+              quas fuga totam obcaecati quae temporibus dolorum. Doloribus iusto
+              perferendis officiis voluptate, officia illo totam voluptatum
+              optio error placeat, corrupti fuga quisquam. Inventore iste
+              temporibus veniam quia deleniti placeat dolorum doloremque facilis
+              similique amet! Dolore minus cum beatae iure excepturi impedit,
+              necessitatibus ducimus quia adipisci aliquam omnis velit fuga
+              repellat? Quas eaque repellendus aliquid iusto nisi, cumque
+              pariatur hic inventore exercitationem quia, at numquam reiciendis
+              maiores laborum voluptates quasi odio nobis earum nemo quae.
+              Tempore, in modi fugit ipsam enim atque culpa nostrum nisi ipsa
+              beatae ab magni, delectus at ullam? Quis odit expedita rem saepe
+              culpa incidunt fuga iusto dolores iste, aperiam impedit, ad modi
+              laudantium reiciendis perspiciatis voluptates in. Nihil obcaecati
+              nulla magni maiores eos nemo beatae voluptatibus corporis iure
+              fugit ipsam tempora itaque dolor debitis tempore tenetur ab
+              aliquid, iste nisi. Aspernatur pariatur labore delectus, optio
+              harum, modi porro, dolorem debitis adipisci veniam nostrum. Amet,
+              sunt illo in hic aspernatur, quia excepturi tempore minus quisquam
+              velit quas blanditiis, eius possimus consequuntur culpa
+              reprehenderit placeat ea!
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="content">
+          <div class="text">
+            <h2>Section Title 1</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Blanditiis quas odio illum alias eius commodi nisi maxime aliquam,
+              excepturi pariatur quod non nemo adipisci officia voluptates hic
+              nostrum in libero maiores eaque odit facilis ipsa. Corporis
+              tempore, ea, modi iure veritatis voluptatum rerum cumque
+              repellendus reiciendis odio ipsum. Nulla magnam ratione, pariatur
+              sit voluptatum maiores cumque accusantium sed cum facilis
+              blanditiis, quam voluptatem commodi officiis voluptas laudantium
+              quis. Aspernatur ab fugiat, repudiandae tenetur dolore labore
+              culpa blanditiis sapiente sed explicabo aliquid recusandae iste
+              sunt aut quaerat nemo praesentium molestiae consequuntur illum
+              esse dicta officia numquam saepe distinctio! Culpa, nisi dicta.
+              Obcaecati dolores, velit quasi nisi, culpa in odit deleniti nam
+              ullam hic quas quos corporis aliquam beatae eaque ducimus quam
+              laudantium nemo! Nisi totam veniam placeat modi recusandae
+              repellat, impedit quasi eum. Beatae, voluptas consequuntur placeat
+              impedit repellendus architecto nam facilis eum at numquam,
+              assumenda similique. Quia rem sit sapiente aliquam tenetur
+              inventore dolorem molestias, reiciendis nemo quod quidem. Laborum
+              impedit, nobis quisquam iusto, minus doloremque reprehenderit
+              perspiciatis recusandae, facilis ad eos voluptatibus. Dignissimos
+              iure quibusdam vel mollitia asperiores saepe odit quo, magnam ad
+              molestias corrupti nemo voluptatum eligendi laboriosam non.
+              Doloremque iure natus dolores molestias neque quis! Deleniti,
+              sapiente.
+            </p>
+          </div>
+          <div class="image">
+            <img src="Images/lake.jpg" alt="Image 1" />
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="content">
+          <div class="image">
+            <img src="Images/abstract.jpg" alt="Image 2" />
+          </div>
+          <div class="text">
+            <h2>Section Title 2</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatibus esse totam blanditiis iure quos. Suscipit ea beatae,
+              doloremque voluptates corporis reprehenderit eaque placeat
+              repudiandae harum perferendis magni, quam rem, libero mollitia id
+              quas fuga totam obcaecati quae temporibus dolorum. Doloribus iusto
+              perferendis officiis voluptate, officia illo totam voluptatum
+              optio error placeat, corrupti fuga quisquam. Inventore iste
+              temporibus veniam quia deleniti placeat dolorum doloremque facilis
+              similique amet! Dolore minus cum beatae iure excepturi impedit,
+              necessitatibus ducimus quia adipisci aliquam omnis velit fuga
+              repellat? Quas eaque repellendus aliquid iusto nisi, cumque
+              pariatur hic inventore exercitationem quia, at numquam reiciendis
+              maiores laborum voluptates quasi odio nobis earum nemo quae.
+              Tempore, in modi fugit ipsam enim atque culpa nostrum nisi ipsa
+              beatae ab magni, delectus at ullam? Quis odit expedita rem saepe
+              culpa incidunt fuga iusto dolores iste, aperiam impedit, ad modi
+              laudantium reiciendis perspiciatis voluptates in. Nihil obcaecati
+              nulla magni maiores eos nemo beatae voluptatibus corporis iure
+              fugit ipsam tempora itaque dolor debitis tempore tenetur ab
+              aliquid, iste nisi. Aspernatur pariatur labore delectus, optio
+              harum, modi porro, dolorem debitis adipisci veniam nostrum. Amet,
+              sunt illo in hic aspernatur, quia excepturi tempore minus quisquam
+              velit quas blanditiis, eius possimus consequuntur culpa
+              reprehenderit placeat ea!
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="content">
+          <div class="text">
+            <h2>Section Title 1</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Blanditiis quas odio illum alias eius commodi nisi maxime aliquam,
+              excepturi pariatur quod non nemo adipisci officia voluptates hic
+              nostrum in libero maiores eaque odit facilis ipsa. Corporis
+              tempore, ea, modi iure veritatis voluptatum rerum cumque
+              repellendus reiciendis odio ipsum. Nulla magnam ratione, pariatur
+              sit voluptatum maiores cumque accusantium sed cum facilis
+              blanditiis, quam voluptatem commodi officiis voluptas laudantium
+              quis. Aspernatur ab fugiat, repudiandae tenetur dolore labore
+              culpa blanditiis sapiente sed explicabo aliquid recusandae iste
+              sunt aut quaerat nemo praesentium molestiae consequuntur illum
+              esse dicta officia numquam saepe distinctio! Culpa, nisi dicta.
+              Obcaecati dolores, velit quasi nisi, culpa in odit deleniti nam
+              ullam hic quas quos corporis aliquam beatae eaque ducimus quam
+              laudantium nemo! Nisi totam veniam placeat modi recusandae
+              repellat, impedit quasi eum. Beatae, voluptas consequuntur placeat
+              impedit repellendus architecto nam facilis eum at numquam,
+              assumenda similique. Quia rem sit sapiente aliquam tenetur
+              inventore dolorem molestias, reiciendis nemo quod quidem. Laborum
+              impedit, nobis quisquam iusto, minus doloremque reprehenderit
+              perspiciatis recusandae, facilis ad eos voluptatibus. Dignissimos
+              iure quibusdam vel mollitia asperiores saepe odit quo, magnam ad
+              molestias corrupti nemo voluptatum eligendi laboriosam non.
+              Doloremque iure natus dolores molestias neque quis! Deleniti,
+              sapiente.
+            </p>
+          </div>
+          <div class="image">
+            <img src="Images/lake.jpg" alt="Image 1" />
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="content">
+          <div class="image">
+            <img src="Images/abstract.jpg" alt="Image 2" />
+          </div>
+          <div class="text">
+            <h2>Section Title 2</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatibus esse totam blanditiis iure quos. Suscipit ea beatae,
+              doloremque voluptates corporis reprehenderit eaque placeat
+              repudiandae harum perferendis magni, quam rem, libero mollitia id
+              quas fuga totam obcaecati quae temporibus dolorum. Doloribus iusto
+              perferendis officiis voluptate, officia illo totam voluptatum
+              optio error placeat, corrupti fuga quisquam. Inventore iste
+              temporibus veniam quia deleniti placeat dolorum doloremque facilis
+              similique amet! Dolore minus cum beatae iure excepturi impedit,
+              necessitatibus ducimus quia adipisci aliquam omnis velit fuga
+              repellat? Quas eaque repellendus aliquid iusto nisi, cumque
+              pariatur hic inventore exercitationem quia, at numquam reiciendis
+              maiores laborum voluptates quasi odio nobis earum nemo quae.
+              Tempore, in modi fugit ipsam enim atque culpa nostrum nisi ipsa
+              beatae ab magni, delectus at ullam? Quis odit expedita rem saepe
+              culpa incidunt fuga iusto dolores iste, aperiam impedit, ad modi
+              laudantium reiciendis perspiciatis voluptates in. Nihil obcaecati
+              nulla magni maiores eos nemo beatae voluptatibus corporis iure
+              fugit ipsam tempora itaque dolor debitis tempore tenetur ab
+              aliquid, iste nisi. Aspernatur pariatur labore delectus, optio
+              harum, modi porro, dolorem debitis adipisci veniam nostrum. Amet,
+              sunt illo in hic aspernatur, quia excepturi tempore minus quisquam
+              velit quas blanditiis, eius possimus consequuntur culpa
+              reprehenderit placeat ea!
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="content">
+          <div class="text">
+            <h2>Section Title 1</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Blanditiis quas odio illum alias eius commodi nisi maxime aliquam,
+              excepturi pariatur quod non nemo adipisci officia voluptates hic
+              nostrum in libero maiores eaque odit facilis ipsa. Corporis
+              tempore, ea, modi iure veritatis voluptatum rerum cumque
+              repellendus reiciendis odio ipsum. Nulla magnam ratione, pariatur
+              sit voluptatum maiores cumque accusantium sed cum facilis
+              blanditiis, quam voluptatem commodi officiis voluptas laudantium
+              quis. Aspernatur ab fugiat, repudiandae tenetur dolore labore
+              culpa blanditiis sapiente sed explicabo aliquid recusandae iste
+              sunt aut quaerat nemo praesentium molestiae consequuntur illum
+              esse dicta officia numquam saepe distinctio! Culpa, nisi dicta.
+              Obcaecati dolores, velit quasi nisi, culpa in odit deleniti nam
+              ullam hic quas quos corporis aliquam beatae eaque ducimus quam
+              laudantium nemo! Nisi totam veniam placeat modi recusandae
+              repellat, impedit quasi eum. Beatae, voluptas consequuntur placeat
+              impedit repellendus architecto nam facilis eum at numquam,
+              assumenda similique. Quia rem sit sapiente aliquam tenetur
+              inventore dolorem molestias, reiciendis nemo quod quidem. Laborum
+              impedit, nobis quisquam iusto, minus doloremque reprehenderit
+              perspiciatis recusandae, facilis ad eos voluptatibus. Dignissimos
+              iure quibusdam vel mollitia asperiores saepe odit quo, magnam ad
+              molestias corrupti nemo voluptatum eligendi laboriosam non.
+              Doloremque iure natus dolores molestias neque quis! Deleniti,
+              sapiente.
+            </p>
+          </div>
+          <div class="image">
+            <img src="Images/lake.jpg" alt="Image 1" />
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="content">
+          <div class="image">
+            <img src="Images/abstract.jpg" alt="Image 2" />
+          </div>
+          <div class="text">
+            <h2>Section Title 2</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatibus esse totam blanditiis iure quos. Suscipit ea beatae,
+              doloremque voluptates corporis reprehenderit eaque placeat
+              repudiandae harum perferendis magni, quam rem, libero mollitia id
+              quas fuga totam obcaecati quae temporibus dolorum. Doloribus iusto
+              perferendis officiis voluptate, officia illo totam voluptatum
+              optio error placeat, corrupti fuga quisquam. Inventore iste
+              temporibus veniam quia deleniti placeat dolorum doloremque facilis
+              similique amet! Dolore minus cum beatae iure excepturi impedit,
+              necessitatibus ducimus quia adipisci aliquam omnis velit fuga
+              repellat? Quas eaque repellendus aliquid iusto nisi, cumque
+              pariatur hic inventore exercitationem quia, at numquam reiciendis
+              maiores laborum voluptates quasi odio nobis earum nemo quae.
+              Tempore, in modi fugit ipsam enim atque culpa nostrum nisi ipsa
+              beatae ab magni, delectus at ullam? Quis odit expedita rem saepe
+              culpa incidunt fuga iusto dolores iste, aperiam impedit, ad modi
+              laudantium reiciendis perspiciatis voluptates in. Nihil obcaecati
+              nulla magni maiores eos nemo beatae voluptatibus corporis iure
+              fugit ipsam tempora itaque dolor debitis tempore tenetur ab
+              aliquid, iste nisi. Aspernatur pariatur labore delectus, optio
+              harum, modi porro, dolorem debitis adipisci veniam nostrum. Amet,
+              sunt illo in hic aspernatur, quia excepturi tempore minus quisquam
+              velit quas blanditiis, eius possimus consequuntur culpa
+              reprehenderit placeat ea!
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="circle">
+      <img src="planet.png" alt="Planet Image" class="planet" />
+    </div>
+    <script src="../../Stars.js"></script>
+    <script>
+      const images = document.querySelectorAll(".image img");
+
+      images.forEach((img) => {
+        img.style.position = "relative";
+        img.style.top = "0";
+        img.style.left = "0";
+        img.style.transition = "transform 3s ease-in-out";
+        floatImage(img);
+      });
+
+      function floatImage(img) {
+        const randomX = Math.random() * 20 - 10; // Random horizontal movement
+        const randomY = Math.random() * 20 - 10; // Random vertical movement
+        img.style.transform = `translate(${randomX}px, ${randomY}px)`;
+        setTimeout(() => floatImage(img), 3000); // Repeat the floating effect every 2 seconds
+      }
+    </script>
+  </body>
+</html>

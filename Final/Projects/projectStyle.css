@@ -26,27 +26,28 @@
 
   .pagecontainer {
     position: relative;
-    width: calc(100% - 40px); /* Adjust width with margins subtracted */
-    height: calc(100vh - 40px); /* Adjust height with margins subtracted */
-    padding: 20px; /* Add padding inside the box */
+    width: calc(100%); /* Adjust width with margins subtracted */
+    height: calc(100vh); /* Adjust height with margins subtracted */
+    padding: 10px; /* Add padding inside the box */
     /*background-color: rgb(3, 3, 32); /* Set a background color */
     overflow: auto; /* Add scrollbar when content overflows */
-    border: 2px solid var(--random-color); /* Add a border */
-    box-shadow: 0 0 10px 2px var(--random-color);
-    border-radius: 10px; /* Add curved corners */
+    border: 6px solid var(--random-color); /* Add a border */
+    /*box-shadow: 0 0 100px 10px var(--random-color);*/
+    /*border-radius: 10px; /* Add curved corners */
     z-index: 1;
+    scroll-behavior: smooth;
   }
 
   .circle {
     position: fixed;
-    bottom: -60px;
+    bottom: -70px;
     left: 50%;
     transform: translateX(-50%);
     width: 160px;
     height: 160px;
     border-radius: 50%;
-    border: 2px solid var(--random-color);
-    box-shadow: 0 0 10px 2px var(--random-color);
+    border: 6px solid var(--random-color);
+    /*box-shadow: 0 0 10px 2px var(--random-color);*/
     z-index: 2;
     overflow: hidden;
     display: flex;
@@ -64,24 +65,7 @@
     transform: translate(-50%, -50%);
     image-rendering: pixelated; /* Set the image-rendering property */
   }
-  /* Style the headings and paragraphs inside the container */
-  .pagecontainer h1 {
-    font-size: 2em; /* Adjust heading font size */
-    color: #fff;
-  }
 
-  .pagecontainer h2 {
-    font-size: 1.5em; /* Adjust heading font size */
-    margin-top: 20px; /* Add spacing between headings */
-    color: #fff;
-  }
-
-  .pagecontainer p {
-    line-height: 1.6; /* Adjust paragraph line height */
-    color: #fff;
-  }
-
-  /* Hide scrollbar in Firefox */
   .pagecontainer::-webkit-scrollbar {
     display: none;
   }
@@ -90,34 +74,53 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 200px; /* Adjust spacing between sections */
+    margin-bottom: 100px; /* Adjust spacing between sections */
   }
   
   .content {
     display: flex;
     width: 100%;
   }
+
+  .content h1 {
+    width: 100%;
+    font-size: 10em;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: -1.6; /* Adjust paragraph line height */
+    color: #fff;
+  }
   
   .text,
   .image {
     width: 50%; /* Each taking half of the section */
     padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
-  
+
   .text h2 {
-    font-size: 1.5em;
+    font-size: 3em;
     margin-bottom: 10px;
     text-align: center;
+    line-height: 1.6; /* Adjust paragraph line height */
+    color: #fff;
   }
   
   .text p {
-    line-height: 1.6;
+    font-size: 1.2em;
     text-align: center;
+    line-height: 1.6;
+    color: #fff;
   }
   
   .image img {
-    max-width: 100%;
-    height: auto;
+    background-size:cover; /* Scale the background image to cover the whole container */
+    background-position: center; /* Center the background image */
+    width: 100%;
+    border: 3px solid var(--random-color);
   }
 
   @media (max-width: 800px) {
@@ -130,6 +133,10 @@
       flex-direction: column; /* Stack text and image vertically */
       align-items: center;
     }
+
+    .content h1 {
+      font-size: 4em;
+    }
   
     .text,
     .image {
@@ -139,5 +146,22 @@
     .text,
     .image {
       padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .text h2 {
+      font-size: 2em;
+      margin-bottom: 6px;
+      line-height: 1;
+    }
+
+    .text p {
+      font-size: 1em;
+      line-height: 1.4;
+    }
+
+    .circle {
+      bottom: -50px;
+      width: 100px;
+      height: 100px;
     }
   }

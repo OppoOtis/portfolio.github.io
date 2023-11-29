@@ -1,0 +1,243 @@
+* {
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+
+  :root {
+    --random-color: #000; /* Default color */
+  }
+
+  body {
+    margin: 0; /* Remove default body margin */
+    font-family: Arial, sans-serif; /* Set a default font */
+    background-color: #05050b; /* Set a background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure minimum height of the viewport */
+    overflow: hidden;
+  }
+
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Behind other content */
+  }
+
+  .logo {
+    position: fixed;
+    width: 200px;
+    height: 40px;
+    border: 6px solid var(--random-color);
+    /*box-shadow: 0 0 10px 2px var(--random-color);*/
+    z-index: 10;
+    overflow: hidden;
+    display:flex;
+    top: 0;
+    left: 0;
+    background-color: #05050b; /* Add a background color */
+}
+
+.logo h1{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 1.6em;
+    text-align: center;
+    margin: 0%;
+}
+
+.logo a {
+    text-decoration: none; /* Remove default underline */
+    color: inherit; /* Inherit the text color from parent */
+  
+    /* Transition for smooth effect */
+    transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
+}
+
+.logo a:hover {
+    color: var(--random-color); /* Change text color to white on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.pagecontainer {
+    position: relative;
+    width: calc(100%); /* Adjust width with margins subtracted */
+    height: calc(100vh); /* Adjust height with margins subtracted */
+    padding: 10px; /* Add padding inside the box */
+    /*background-color: rgb(3, 3, 32); /* Set a background color */
+    overflow: auto; /* Add scrollbar when content overflows */
+    border: 6px solid var(--random-color); /* Add a border */
+    /*box-shadow: 0 0 100px 10px var(--random-color);*/
+    /*border-radius: 10px; /* Add curved corners */
+    z-index: 3;
+    scroll-behavior: smooth;
+  }
+
+  .pagecontainer::-webkit-scrollbar {
+    display: none;
+  }
+
+  .section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .content {
+    background-color: #05050b;
+    display: flex;
+    width: 70%;
+    border: 2px solid var(--random-color);
+    transition: border-width 0.3s ease-in-out;
+  }
+
+  .content:hover {
+    border-width: 6px; /* Adjust the desired border thickness on hover */
+  }
+
+  .content a{
+    display: flex;
+    width: 100%;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .title h1 {
+    width: 100%;
+    font-size: 10em;
+    margin-bottom: 100px;
+    text-align: center;
+    line-height: 1; /* Adjust paragraph line height */
+    color: #fff;
+    text-shadow: -2px -1px 0 #000,  
+               2px -1px 0 #000,
+              -2px 1px 0 #000,
+               2px 1px 0 #000;
+    z-index: 1;
+  }
+
+  .titleImage{
+    position: absolute;
+    top: 250px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    z-index: -1;
+  }
+  
+  .text,
+  .image {
+    width: 50%; /* Each taking half of the section */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .text {
+    padding: 10px;
+  }
+
+  .text h2 {
+    font-size: 2em;
+    margin-bottom: 2px;
+    text-align: start;
+    line-height: 0.1; /* Adjust paragraph line height */
+    color: #fff;
+  }
+  
+  .text p {
+    font-size: 1.1em;
+    text-align: left;
+    line-height: 1.4;
+    color: #fff;
+  }
+  
+  .image img {
+    background-size:cover; /* Scale the background image to cover the whole container */
+    background-position: center; /* Center the background image */
+    width: 100%;
+  }
+
+  .circle {
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 6px solid var(--random-color);
+    /*box-shadow: 0 0 10px 2px var(--random-color);*/
+    z-index: 2;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #05050b; /* Add a background color */
+  }
+
+  .circle .planet {
+    position: absolute;
+    width: 100%; /* Fill the circle width */
+    height: auto; /* Maintain aspect ratio */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    image-rendering: pixelated; /* Set the image-rendering property */
+  }
+
+  @media (max-width: 1200px) {
+    .section {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center;
+    }
+  
+    .content {
+      flex-direction: column; /* Stack text and image vertically */
+      align-items: center;
+      display: flex;
+    }
+
+    .content h1 {
+      font-size: 4em;
+    }
+
+    .content a{
+      flex-direction: column;
+    }
+  
+    .text,
+    .image {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .logo {
+      width: 160px;
+      height: 30px;
+    }
+
+    .logo h1{
+      font-size: 1em;
+    }
+
+    .text h2 {
+      font-size: 2em;
+      margin-bottom: 6px;
+      line-height: 1;
+    }
+
+    .text p {
+      font-size: 1em;
+      line-height: 1.4;
+    }
+
+    .circle {
+      bottom: -50px;
+      width: 100px;
+      height: 100px;
+    }
+  }

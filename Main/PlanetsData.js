@@ -11,6 +11,21 @@ const projects = [
       imagePath: './Projects/Project2/image.png',
       textPath: './Projects/Project2/text.txt'
     },
+    {
+      name: 'Project2',
+      imagePath: './Projects/Project2/image.png',
+      textPath: './Projects/Project2/text.txt'
+    },
+    {
+      name: 'Project2',
+      imagePath: './Projects/Project2/image.png',
+      textPath: './Projects/Project2/text.txt'
+    },
+    {
+      name: 'Project2',
+      imagePath: './Projects/Project2/image.png',
+      textPath: './Projects/Project2/text.txt'
+    },
     //add more projects
   ];
 

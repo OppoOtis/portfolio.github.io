@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joppe Dekkers</title>
+    <link rel="stylesheet" href="homepageStyle.css" />
+  </head>
+  <body>
+    <canvas id="starsCanvas"></canvas>
+    <div class="pagecontainer">
+      <div class="title">
+        <h1>Portfolio <br />Joppe Dekkers</h1>
+      </div>
+      <div class="section">
+        <div class="grid">
+          <div class="item">
+            <a href="soloProjects.html"
+              ><img src="Images/Home/SoloProjects.png" alt="Solo Projects" />
+              <h1>Solo Projects</h1></a
+            >
+          </div>
+          <div class="item">
+            <a href="your_page_url_here">
+              <img src="Images/Home/GroupProjects.png" alt="Group Projects" />
+              <h1>Group Projects</h1></a
+            >
+          </div>
+          <div class="item">
+            <a href="about.html">
+              <img src="Images/Home/About.png" alt="About" />
+              <h1>About</h1></a
+            >
+          </div>
+          <div class="item">
+            <a href="">
+              <img src="Images/Home/Contact.png" alt="Contact" />
+              <h1>Contact</h1></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="logo">
+      <a href="index.html"><h1>Joppe Dekkers</h1></a>
+    </div>
+    <script>
+      const images = document.querySelectorAll(".item");
+
+      images.forEach((img) => {
+        img.style.position = "relative";
+        img.style.top = "0";
+        img.style.left = "0";
+        img.style.transition = "transform 3s ease-in-out";
+        floatImage(img);
+      });
+
+      function floatImage(img) {
+        const randomX = Math.random() * 25 - 10; // Random horizontal movement
+        const randomY = Math.random() * 25 - 10; // Random vertical movement
+        img.style.transform = `translate(${randomX}px, ${randomY}px)`;
+        setTimeout(() => floatImage(img), 3000); // Repeat the floating effect every 2 seconds
+      }
+    </script>
+    <script src="Stars.js"></script>
+  </body>
+</html>
