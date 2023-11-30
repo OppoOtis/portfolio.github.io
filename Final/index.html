@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Joppe Dekkers</title>
     <link rel="stylesheet" href="homepageStyle.css" />
+    <link rel="icon" type="image/x-icon" href="Images/Home/x-icon.png" />
+    <script>
+      window.addEventListener("load", () => {
+        const randomColor = `rgb(${Math.floor(
+          Math.random() * 256
+        )}, ${Math.floor(Math.random() * 256)}, ${Math.floor(
+          Math.random() * 256
+        )})`;
+
+        // Set the random color as a CSS variable
+        document.documentElement.style.setProperty(
+          "--random-color",
+          randomColor
+        );
+      });
+    </script>
   </head>
   <body>
     <canvas id="starsCanvas"></canvas>
@@ -21,7 +37,7 @@
             >
           </div>
           <div class="item">
-            <a href="your_page_url_here">
+            <a href="groupProjects.html">
               <img src="Images/Home/GroupProjects.png" alt="Group Projects" />
               <h1>Group Projects</h1></a
             >
@@ -33,7 +49,7 @@
             >
           </div>
           <div class="item">
-            <a href="">
+            <a href="index.html">
               <img src="Images/Home/Contact.png" alt="Contact" />
               <h1>Contact</h1></a
             >

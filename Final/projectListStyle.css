@@ -61,6 +61,29 @@
     text-decoration: underline; /* Add underline on hover */
 }
 
+.title h1 {
+  width: 100%;
+  font-size: 10em;
+  margin-bottom: 100px;
+  text-align: center;
+  line-height: 1; /* Adjust paragraph line height */
+  color: #fff;
+  text-shadow: -2px -1px 0 #000,  
+             2px -1px 0 #000,
+            -2px 1px 0 #000,
+             2px 1px 0 #000;
+  z-index: 1;
+}
+
+.titleImage{
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  z-index: -1;
+}
+
 .pagecontainer {
     position: relative;
     width: calc(100%); /* Adjust width with margins subtracted */
@@ -103,29 +126,6 @@
     width: 100%;
     color: #fff;
     text-decoration: none;
-  }
-
-  .title h1 {
-    width: 100%;
-    font-size: 10em;
-    margin-bottom: 100px;
-    text-align: center;
-    line-height: 1; /* Adjust paragraph line height */
-    color: #fff;
-    text-shadow: -2px -1px 0 #000,  
-               2px -1px 0 #000,
-              -2px 1px 0 #000,
-               2px 1px 0 #000;
-    z-index: 1;
-  }
-
-  .titleImage{
-    position: absolute;
-    top: 250px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 800px;
-    z-index: -1;
   }
   
   .text,
@@ -215,6 +215,19 @@
   }
 
   @media (max-width: 800px) {
+    .title h1 {
+      font-size: 6em;
+    }
+  
+    .titleImage{
+      position: absolute;
+      top: 200px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      z-index: -1;
+    }
+
     .logo {
       width: 160px;
       height: 30px;
@@ -236,7 +249,8 @@
     }
 
     .circle {
-      bottom: -50px;
+      transform: translate(-50%, -50%);
+      top: 100px;
       width: 100px;
       height: 100px;
     }
