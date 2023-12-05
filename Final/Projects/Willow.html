@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joppe Dekkers</title>
+    <link rel="stylesheet" href="projectStyle.css" />
+    <link rel="icon" type="image/x-icon" href="../Images/Home/x-icon.png" />
+    <script>
+      window.addEventListener("load", () => {
+        const randomColor = `rgb(${Math.floor(
+          Math.random() * 256
+        )}, ${Math.floor(Math.random() * 256)}, ${Math.floor(
+          Math.random() * 256
+        )})`;
+
+        // Set the random color as a CSS variable
+        document.documentElement.style.setProperty(
+          "--random-color",
+          randomColor
+        );
+      });
+    </script>
+  </head>
+  <body>
+    <canvas id="starsCanvas"></canvas>
+    <div class="pagecontainer">
+      <section class="section">
+        <div class="content">
+          <h1>Willow</h1>
+        </div>
+      </section>
+      <section class="section">
+        <div class="content">
+          <div class="text">
+            <h2>What's the project</h2>
+            <p>Description</p>
+          </div>
+          <div class="image">
+            <img src="Willow/Willow_3.jpg" alt="Image 1" />
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="content">
+          <div class="image">
+            <img src="Willow/Willow_4.jpg" alt="Image 2" />
+          </div>
+          <div class="text">
+            <h2>The process</h2>
+            <p>Description</p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="content">
+          <div class="image">
+            <img src="Willow/Willow_2.jpg" alt="Image 2" />
+          </div>
+          <div class="image">
+            <img src="Willow/Willow_1.jpg" alt="Image 2" />
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="content">
+          <div class="image">
+            <img src="Willow/Willow_5.jpg" alt="Image 2" />
+          </div>
+          <div class="image">
+            <img src="Willow/Willow_6.jpg" alt="Image 2" />
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="circle">
+      <img src="planet.png" alt="Planet Image" class="planet" />
+    </div>
+    <div class="logo">
+      <a href="../index.html"><h1>Joppe Dekkers</h1></a>
+    </div>
+    <script src="../Stars.js"></script>
+    <script>
+      const images = document.querySelectorAll(".image img");
+
+      images.forEach((img) => {
+        img.style.position = "relative";
+        img.style.top = "0";
+        img.style.left = "0";
+        img.style.transition = "transform 3s ease-in-out";
+        floatImage(img);
+      });
+
+      function floatImage(img) {
+        const randomX = Math.random() * 20 - 10; // Random horizontal movement
+        const randomY = Math.random() * 20 - 10; // Random vertical movement
+        img.style.transform = `translate(${randomX}px, ${randomY}px)`;
+        setTimeout(() => floatImage(img), 3000); // Repeat the floating effect every 2 seconds
+      }
+    </script>
+  </body>
+</html>
